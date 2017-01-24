@@ -17,56 +17,56 @@
         "url": ""/*开发者个人主页地址*/
     },
     "permissions": {
-        
-        
-        
+
+
+
         "Cache": {
             "description": "管理应用缓存"
         },
-        
+
         "Console": {
             "description": "跟踪调试输出日志"
         },
-        
-        
-        
+
+
+
         "Events": {
             "description": "应用扩展事件"
         },
-        
-        
-        
+
+
+
         "Invocation": {
             "description": "使用Native.js能力"
         },
-        
-        
+
+
         "Storage": {
             "description": "管理应用本地数据"
         },
-        
-        
+
+
         "Runtime": {
             "description": "访问运行期环境"
         },
-        
-        
-        
-        
-        
+
+
+
+
+
         "Webview":{
         	"description": "窗口管理"
         },
         "NativeUI":{
         	"description": "原生UI控件"
         },
-        
+
         "Device":{},"NativeObj":{},"Navigator":{}
     },
     "plus": {
         "splashscreen": {
             "autoclose": true,/*是否自动关闭程序启动界面，true表示应用加载应用入口页面后自动关闭；false则需调plus.navigator.closeSplashscreen()关闭*/
-            "waiting": false/*是否在程序启动界面显示等待雪花，true表示显示，false表示不显示。*/
+            "waiting": true,"delay":"0"/*是否在程序启动界面显示等待雪花，true表示显示，false表示不显示。*/
         },
         "popGesture": "close",/*设置应用默认侧滑返回关闭Webview窗口，"none"为无侧滑返回功能，"hide"为侧滑隐藏Webview窗口。参考http://ask.dcloud.net.cn/article/102*/
         "runmode": "normal",/*应用的首次启动运行模式，可取liberate或normal，liberate模式在第一次启动时将解压应用资源（Android平台File API才可正常访问_www目录）*/
@@ -151,94 +151,94 @@
                     }
                 },
                 "android": {
-                    "mdpi": "Z:/files/01_docs/img/info/引导页/240x282.png", /*普通屏启动图片，分辨率：240x282*/
-                    "ldpi": "Z:/files/01_docs/img/info/引导页/320x442.png", /*大屏启动图片，分辨率：320x442*/
-                    "hdpi": "Z:/files/01_docs/img/info/引导页/480x762.png", /*高分屏启动图片，分辨率：480x762*/
-                    "xhdpi": "Z:/files/01_docs/img/info/引导页/720x1242.png", /*720P高分屏启动图片，分辨率：720x1242*/
-                    "xxhdpi": "Z:/files/01_docs/img/info/引导页/1080x1882.png"/*1080P高分屏启动图片，分辨率：1080x1882*/
+                    "mdpi": "unpackage/res/icons/180x180.png", /*普通屏启动图片，分辨率：240x282*/
+                    "ldpi": "unpackage/res/icons/180x180.png", /*大屏启动图片，分辨率：320x442*/
+                    "hdpi": "unpackage/res/icons/180x180.png", /*高分屏启动图片，分辨率：480x762*/
+                    "xhdpi": "unpackage/res/icons/180x180.png", /*720P高分屏启动图片，分辨率：720x1242*/
+                    "xxhdpi": "unpackage/res/icons/180x180.png"/*1080P高分屏启动图片，分辨率：1080x1882*/
                 }
             },"debug":false
         }
     },
 	"dependencies":{
-	  "pages": {
-	    "views/index.html": {
-	      "href": "views/index.html",
-	      "resources": [
-	        "@/js/lib/qiao/qiao.h.js",
-	        "@/js/app/index.js",
-	        "@/css/mui.min.css",
-	        "@/fonts/mui.ttf",
-	        "@/js/mui.min.js",
-	        "@/js/lib/jquery/jquery-1.11.2.min.js",
-	        "views/list.html"
-	      ],
-	      "priority": 0,
-	      "refer": [
-	        "views/add.html",
-	        "views/detail.html",
-	        "views/menu.html"
-	      ]
-	    },
-	    "views/add.html": {
-	      "priority": 0,
-	      "resources": [
-	        "@/css/mui.min.css",
-	        "@/js/mui.min.js",
-	        "@/js/lib/jquery/jquery-1.11.2.min.js",
-	        "@/js/lib/qiao/qiao.h.js",
-	        "@/js/app/add.js",
-	        "@/fonts/mui.ttf"
-	      ],
-	      "refer": []
-	    },
-	    "views/detail.html": {
-	      "priority": 0,
-	      "resources": [
-	        "@/css/mui.min.css",
-	        "@/fonts/mui.ttf",
-	        "@/js/app/detail.js",
-	        "@/js/lib/jquery/jquery-1.11.2.min.js",
-	        "@/js/lib/qiao/qiao.h.js",
-	        "@/js/mui.min.js"
-	      ],
-	      "refer": []
-	    },
-	    "views/list.html": {
-	      "priority": 0,
-	      "resources": [
-	        "@/css/mui.min.css",
-	        "@/fonts/mui.ttf",
-	        "@/js/lib/jquery/jquery-1.11.2.min.js",
-	        "@/js/lib/qiao/qiao.h.js",
-	        "@/js/lib/qmask/qmask-3.0.css",
-	        "@/js/lib/qmask/qmask-3.0.js",
-	        "@/js/app/list.js",
-	        "@/js/mui.min.js"
-	      ],
-	      "refer": []
-	    },
-	    "views/menu.html": {
-	      "priority": 0,
-	      "resources": [
-	        "@/css/app/menu.css",
-	        "@/css/mui.min.css",
-	        "@/fonts/mui.ttf",
-	        "@/js/app/menu.js",
-	        "@/js/lib/jquery/jquery-1.11.2.min.js",
-	        "@/js/lib/qiao/qiao.h.js",
-	        "@/js/mui.min.js"
-	      ],
-	      "refer": []
-	    }
-	  },
-	  "idle": {
-	    "resources": [
-	      "LICENSE",
-	      "version.txt",
-	      "README.md"
-	    ]
-	  }
+		"pages": {
+			"views/index.html": {
+				"href": "views/index.html",
+				"resources": [
+					"@/js/lib/qiao/qiao.h.js",
+					"@/js/app/index.js",
+					"@/css/mui.min.css",
+					"@/fonts/mui.ttf",
+					"@/js/mui.min.js",
+					"@/js/lib/jquery/jquery-1.11.2.min.js",
+					"views/list.html"
+				],
+				"priority": 0,
+				"refer": [
+					"views/add.html",
+					"views/detail.html",
+					"views/menu.html"
+				]
+			},
+			"views/add.html": {
+				"priority": 0,
+				"resources": [
+					"@/css/mui.min.css",
+					"@/js/mui.min.js",
+					"@/js/lib/jquery/jquery-1.11.2.min.js",
+					"@/js/lib/qiao/qiao.h.js",
+					"@/js/app/add.js",
+					"@/fonts/mui.ttf"
+				],
+				"refer": []
+			},
+			"views/detail.html": {
+				"priority": 0,
+				"resources": [
+					"@/css/mui.min.css",
+					"@/fonts/mui.ttf",
+					"@/js/app/detail.js",
+					"@/js/lib/jquery/jquery-1.11.2.min.js",
+					"@/js/lib/qiao/qiao.h.js",
+					"@/js/mui.min.js"
+				],
+				"refer": []
+			},
+			"views/list.html": {
+				"priority": 0,
+				"resources": [
+					"@/css/mui.min.css",
+					"@/fonts/mui.ttf",
+					"@/js/lib/jquery/jquery-1.11.2.min.js",
+					"@/js/lib/qiao/qiao.h.js",
+					"@/js/lib/qmask/qmask-3.0.css",
+					"@/js/lib/qmask/qmask-3.0.js",
+					"@/js/app/list.js",
+					"@/js/mui.min.js"
+				],
+				"refer": []
+			},
+			"views/menu.html": {
+				"priority": 0,
+				"resources": [
+					"@/css/app/menu.css",
+					"@/css/mui.min.css",
+					"@/fonts/mui.ttf",
+					"@/js/app/menu.js",
+					"@/js/lib/jquery/jquery-1.11.2.min.js",
+					"@/js/lib/qiao/qiao.h.js",
+					"@/js/mui.min.js"
+				],
+				"refer": []
+			}
+		},
+		"idle": {
+			"resources": [
+				"LICENSE",
+				"version.txt",
+				"README.md"
+			]
+		}
 	},
 	"unpackage":[
 	  "LICENSE",

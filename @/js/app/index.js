@@ -12,7 +12,7 @@ var detail = null;
 // 所有方法都放到这里
 mui.plusReady(function(){
 	setColor("#f7f7f7");
-	
+
 	// 侧滑菜单
 	main = qiao.h.indexPage();
 	var menuoptions = qiao.h.page('menu', {
@@ -26,19 +26,19 @@ mui.plusReady(function(){
 	qiao.on('.mui-icon-bars', 'tap', opMenu);
 	main.addEventListener('maskClick', opMenu);
 	mui.menu = opMenu;
-	
+
 	// 添加
 	add = mui.preload(qiao.h.normalPage('add', {popGesture:'none'}));
 	qiao.on('.adda', 'tap', showAdd);
 	qiao.on('.mui-icon-back', 'tap', hideAdd);
-	
+
 	// 详情
 	detail = mui.preload(qiao.h.normalPage('detail', {popGesture:'none'}));
-	
+
 	// 退出
 	mui.back = function(){
 		if($('.adda').is(':hidden')){
-			hideAdd();	
+			hideAdd();
 		}else if(showMenu){
 			closeMenu();
 		}else{
@@ -66,7 +66,7 @@ function openMenu(){
 					duration: 150
 				}
 			});
-	
+
 			showMenu = true;
 		});
 	}
@@ -80,7 +80,7 @@ function closeMenu(){
 			duration: 100
 		}
 	});
-	
+
 	showMenu = false;
 	setTimeout(function() {
 		menu.hide();

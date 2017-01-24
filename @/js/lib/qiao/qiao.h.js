@@ -24,7 +24,7 @@ qiao.h.centerPage = function(id, options){
 };
 qiao.h.page = function(id, options){
 	var url = id + '.html';
-	
+
 	options.id = id;
 	options.url = url;
 	return options;
@@ -74,7 +74,7 @@ qiao.h.sheet = function(title, btns,func){
 		for(var i=0; i<btns.length; i++){
 			btnArray.push({title:btns[i]});
 		}
-		
+
 		plus.nativeUI.actionSheet({
 			title : title,
 			cancel : '取消',
@@ -94,28 +94,28 @@ qiao.h.modaloptions = {
 };
 qiao.h.alert = function(options, ok){
 	var opt = $.extend({}, qiao.h.modaloptions);
-	
+
 	opt.title = '提示';
 	if(typeof options == 'string'){
 		opt.content = options;
 	}else{
 		$.extend(opt, options);
 	}
-	
+
 	plus.nativeUI.alert(opt.content, function(e){
 		if(ok) ok();
 	}, opt.title, opt.abtn);
 };
 qiao.h.confirm = function(options, ok, cancel){
 	var opt = $.extend({}, qiao.h.modaloptions);
-	
+
 	opt.title = '确认操作';
 	if(typeof options == 'string'){
 		opt.content = options;
 	}else{
 		$.extend(opt, options);
 	}
-	
+
 	plus.nativeUI.confirm(opt.content, function(e){
 		var i = e.index;
 		if(i == 0 && ok) ok();
@@ -124,14 +124,14 @@ qiao.h.confirm = function(options, ok, cancel){
 };
 qiao.h.prompt = function(options, ok, cancel){
 	var opt = $.extend({}, qiao.h.modaloptions);
-	
+
 	opt.title = '输入内容';
 	if(typeof options == 'string'){
 		opt.content = options;
 	}else{
 		$.extend(opt, options);
 	}
-	
+
 	plus.nativeUI.prompt(opt.content, function(e){
 		var i = e.index;
 		if(i == 0 && ok) ok(e.value);
@@ -155,7 +155,7 @@ qiao.h.getItem = function(key){
 			}
 		};
 	}
-	
+
 	return null;
 };
 qiao.h.insertItem = function(key, value){
@@ -172,12 +172,12 @@ qiao.h.clear = function(){
 qiao.h.db = function(name, size){
 	var db_name = name ? name : 'db_test';
 	var db_size = size ? size : 2;
-	
+
 	return openDatabase(db_name, '1.0', 'db_test', db_size * 1024 * 1024);
 };
 qiao.h.update = function(db, sql){
 	if(db &&sql){
-		db.transaction(function(tx){tx.executeSql(sql);});	
+		db.transaction(function(tx){tx.executeSql(sql);});
 	}
 };
 qiao.h.query = function(db, sql, func){
